@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import TodoItem from "./TodoItem";
+import { TodoContext } from "../App";
 
-const Todos = ({ todos, toggleCompleted, deleteTodo }) => {
+const Todos = ({ todos }) => {
+	const { toggleCompleted, deleteTodo } = useContext(TodoContext);
 	return (
 		<div style={styles.container}>
 			{todos.map((todo) => {
